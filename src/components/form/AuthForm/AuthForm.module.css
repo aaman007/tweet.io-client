@@ -1,0 +1,26 @@
+.formCard {
+    margin: 30px 0;
+    min-height: 340px;
+}
+
+.formTitle {
+    margin: 20px 0;
+}
+
+.form {
+}
+
+.buttonWrapper {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+
+}
+
+.formSwitchWrapper {
+    margin-bottom: 20px;
+}
