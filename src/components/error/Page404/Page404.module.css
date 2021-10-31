@@ -1,0 +1,20 @@
+.page {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.title {
+    font-size: 40px;
+    color: #c71e1e;
+    margin-bottom: 20px;
+}
+
+.description {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
