@@ -3,7 +3,6 @@ import { authActions } from "../slices/auth";
 import { home as homeUrl } from "../../urls";
 import fetchify from "../../utils/fetchify";
 
-
 export const loginAction = (data, history) => async dispatch => {
     const sendRequest = async () => {
         return await fetchify(`accounts/v1/login/`, 200, {

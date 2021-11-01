@@ -2,7 +2,6 @@ import fetchify from "../../utils/fetchify";
 import { uiActions } from "../slices/ui";
 import { tweetActions } from "../slices/tweet";
 
-
 export const createTweet = (token, tweet) => async dispatch => {
     const sendRequest = async () => {
         return await fetchify('tweets/v1/tweets/', 201, {
