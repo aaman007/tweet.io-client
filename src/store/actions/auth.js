@@ -1,4 +1,3 @@
-import { BASE_URL } from "../../constants";
 import { uiActions } from "../slices/ui";
 import { authActions } from "../slices/auth";
 import { home as homeUrl } from "../../urls";
@@ -7,7 +6,7 @@ import fetchify from "../../utils/fetchify";
 
 export const loginAction = (data, history) => async dispatch => {
     const sendRequest = async () => {
-        return await fetchify(`${BASE_URL}/accounts/v1/login/`, 200, {
+        return await fetchify(`accounts/v1/login/`, 200, {
             method: 'POST',
             body: JSON.stringify(data),
             headers: { 'Content-Type': 'application/json' }
@@ -29,14 +28,13 @@ export const loginAction = (data, history) => async dispatch => {
             type: 'error',
             title: 'Login Failed',
             description: error.message
-        }))
-
+        }));
     }
 };
 
 export const registerAction = (data, history) => async dispatch => {
     const sendRequest = async () => {
-        return await fetchify(`${BASE_URL}/accounts/v1/register/`, 201, {
+        return await fetchify(`accounts/v1/register/`, 201, {
             method: 'POST',
             body: JSON.stringify(data),
             headers: { 'Content-Type': 'application/json' }
@@ -58,7 +56,6 @@ export const registerAction = (data, history) => async dispatch => {
             type: 'error',
             title: 'Registration Failed',
             description: error.message
-        }))
-
+        }));
     }
 }

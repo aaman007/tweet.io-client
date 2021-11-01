@@ -14,7 +14,7 @@ const Login = () => {
 
     return (
         <AuthForm
-            title={"Login to tweet.io"}
+            title={"Login to tweets.io"}
             buttonText={"Login"}
             onSubmit={handleFormSubmit}
             formSwitchInfo={{

@@ -1,0 +1,56 @@
+.tweet {
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 15px;
+}
+
+.tweetInfo {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.2fr;
+    margin-bottom: 20px;
+}
+
+.tweetInfo div {
+}
+
+.fullName {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.username, .username a {
+    text-decoration: none;
+    color: #777f7f;
+    margin-left: 10px;
+    text-align: center;
+}
+
+.tweetTime {
+    color: #777f7f;
+    margin-left: 10px;
+    text-align: right;
+}
+
+.content {
+    display: flex;
+    justify-content: flex-start;
+    white-space: pre-line;
+    line-height: 1.4;
+}
+
+.editOptions {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.editOptions svg {
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.editOptions svg:hover {
+    transform: scale(1.04);
+}

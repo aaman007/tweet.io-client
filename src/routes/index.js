@@ -6,7 +6,10 @@ import AuthLayout from '../components/layouts/Auth/index';
 
 const Login = React.lazy(() => import('../pages/Login'));
 const Register = React.lazy(() => import('../pages/Register'));
-const Home = React.lazy(() => import('../pages/Home'));
+const Home = React.lazy(() => import('../pages/Home/Home'));
+const Profile = React.lazy(() => import('../pages/Profile'));
+const User = React.lazy(() => import('../pages/User'));
+const PeopleWhoFollow = React.lazy(() => import('../pages/PeopleWhoFollow'));
 
 // Route configuration with unique name identifiers
 const routes =  [
@@ -15,19 +18,40 @@ const routes =  [
         component: Login,
         path: urls.login(),
         layout: AuthLayout,
-        redirectIfLoggedIn: false
+        redirectIfLoggedIn: true
     },
     {
         name: 'Register',
         component: Register,
         path: urls.register(),
         layout: AuthLayout,
-        redirectIfLoggedIn: false
+        redirectIfLoggedIn: true
     },
     {
         name: 'Home',
         component: Home,
         path: urls.home(),
+        layout: BaseLayout,
+        isProtected: true
+    },
+    {
+        name: 'Profile',
+        component: Profile,
+        path: urls.profile(),
+        layout: BaseLayout,
+        isProtected: true
+    },
+    {
+        name: 'User',
+        component: User,
+        path: urls.user(),
+        layout: BaseLayout,
+        isProtected: true
+    },
+    {
+        name: 'PeopleWhoFollow',
+        component: PeopleWhoFollow,
+        path: urls.peopleWhoFollow(),
         layout: BaseLayout,
         isProtected: true
     }

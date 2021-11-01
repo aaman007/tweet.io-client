@@ -1,0 +1,15 @@
+.editFormWrapper {
+    width: 400px;
+    height: 180px;
+    max-height: 300px;
+    background: #fff;
+    border-radius: 10px;
+    overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+
+.editFormWrapper::-webkit-scrollbar { /* WebKit */
+    width: 0;
+    height: 0;
+}

@@ -1,5 +1,13 @@
+import Container from "../ui/Container";
+import Navigation from "./Navigation";
+
 const BaseLayout = ({ children }) => {
-    return <div> {children} </div>
+    return (
+        <Container>
+            <Navigation />
+            {children}
+        </Container>
+    )
 };
 
 export default BaseLayout;

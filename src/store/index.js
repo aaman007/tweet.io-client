@@ -10,6 +10,7 @@ import { persistStore } from "redux-persist";
 import authSlice from "./slices/auth";
 import uiSlice from "./slices/ui";
 import tweetSlice from "./slices/tweet";
+import userSlice from "./slices/user";
 
 const persistConfig = {
     key: 'root',
@@ -20,7 +21,8 @@ const persistConfig = {
 const rootReducer = combineReducers({
     auth: authSlice.reducer,
     ui: uiSlice.reducer,
-    tweet: tweetSlice.reducer
+    tweet: tweetSlice.reducer,
+    user: userSlice.reducer
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

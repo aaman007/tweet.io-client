@@ -14,7 +14,7 @@ const Register = () => {
 
     return (
         <AuthForm
-            title={"Join now tweet.io"}
+            title={"Join now tweets.io"}
             buttonText={"Register"}
             showNameFields={true}
             onSubmit={handleFormSubmit}

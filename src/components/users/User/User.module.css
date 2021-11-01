@@ -1,0 +1,26 @@
+.user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;;
+}
+
+.user img {
+    width: 40px;
+}
+
+.userInfo {
+    margin: 0 20px;
+}
+
+.userInfo span {
+    color: #777f7f;
+}
+
+.button {
+    font-size: 14px;
+    padding: 4px 14px;
+    background: #289ef8;
+}
