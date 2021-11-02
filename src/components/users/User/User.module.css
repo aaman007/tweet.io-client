@@ -15,7 +15,8 @@
     margin: 0 20px;
 }
 
-.userInfo span {
+.userInfo a {
+    text-decoration: none;
     color: #777f7f;
 }
 

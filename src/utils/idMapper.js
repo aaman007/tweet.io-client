@@ -1,6 +1,6 @@
-const idMapper = list => {
+const idMapper = (list, key = 'id') => {
     return list.reduce((last, newVal) => {
-        return { ...last, [newVal.id]: true };
+        return { ...last, [newVal[key]]: true };
     }, {});
 };
 

@@ -1,8 +1,19 @@
 import classes from './ProfileInfo.module.css';
 import UserIcon from '../../../assets/icons/user.png';
 import Button from "../../ui/Button";
+import {useFollow} from "../../../hooks/useFollow";
 
 const ProfileInfo = ({ user, followable }) => {
+    const [handleFollow, handleUnfollow] = useFollow(user.username);
+
+    const renderButtons = () => {
+        if (!followable) return null;
+        else if (user.is_following) {
+            return <Button className={classes.button} onClick={handleUnfollow}> Unfollow </Button>;
+        }
+        return <Button className={classes.button} onClick={handleFollow}> Follow </Button>
+    }
+
     return (
         <div className={classes.wrapper}>
             <img src={UserIcon} alt={'Avatar'} />
@@ -12,7 +23,7 @@ const ProfileInfo = ({ user, followable }) => {
                 <span> {user.followers_count || 0} Followers </span>
                 <span> {user.follows_count || 0} Following </span>
             </div>
-            {followable && <Button className={classes.button}> Follow </Button>}
+            { renderButtons() }
         </div>
     )
 };
