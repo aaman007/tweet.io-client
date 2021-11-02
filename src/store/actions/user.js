@@ -2,9 +2,11 @@ import fetchify from "../../utils/fetchify";
 import { userActions } from "../slices/user";
 import { uiActions } from "../slices/ui";
 
-export const fetchUsers = token => async dispatch => {
+export const fetchUsers = (token, url) => async dispatch => {
+    url = url ? url : 'accounts/v1/users/';
+
     const sendRequest = async () => {
-        return await fetchify('accounts/v1/users/', 200, {
+        return await fetchify(url, 200, {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`

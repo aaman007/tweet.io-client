@@ -1,7 +1,7 @@
 .tweet {
     box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;;
     padding: 20px;
-    margin: 20px;
+    margin: 20px 0 20px 0;
     border-radius: 15px;
 }
 
@@ -21,13 +21,13 @@
 
 .username, .username a {
     text-decoration: none;
-    color: #777f7f;
+    color: var(--muted-color);
     margin-left: 10px;
     text-align: center;
 }
 
 .tweetTime {
-    color: #777f7f;
+    color: var(--muted-color);
     margin-left: 10px;
     text-align: right;
 }

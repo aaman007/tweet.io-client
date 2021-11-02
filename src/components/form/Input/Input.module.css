@@ -26,6 +26,7 @@
 }
 
 .error {
+    width: 250px;
     margin-top: 10px;
     color: #c71e1e;
 }

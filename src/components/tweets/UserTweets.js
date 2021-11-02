@@ -6,7 +6,7 @@ import TweetList from "./TweetList";
 
 const UserTweets = ({ username, token, editable }) => {
     const dispatch = useDispatch();
-    const { tweets } = useSelector(state => state?.tweet.userTweets);
+    const { tweets, next } = useSelector(state => state?.tweet.userTweets);
 
     useEffect(() => {
         return () => {
@@ -18,7 +18,11 @@ const UserTweets = ({ username, token, editable }) => {
         dispatch(fetchTweets(token, null, username, false));
     }, [dispatch, token, username]);
 
-    return <TweetList tweets={tweets} editable={editable} />;
+    const handleNextClick = () => {
+        dispatch(fetchTweets(token, next));
+    };
+
+    return <TweetList tweets={tweets} editable={editable} hasNext={!!next} onNextClick={handleNextClick} />;
 };
 
 export default UserTweets;

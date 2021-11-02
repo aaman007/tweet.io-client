@@ -1,15 +1,10 @@
 import { useEffect, useState } from "react";
 
-let initial = true;
-
 export const useDisableCountdown = milliseconds => {
     const [disable, setDisable] = useState(false);
 
     useEffect(() => {
-        if (initial) {
-            initial = false;
-            return;
-        }
+        if (!disable) return;
 
         const timeout = setTimeout(() => {
             setDisable(false);

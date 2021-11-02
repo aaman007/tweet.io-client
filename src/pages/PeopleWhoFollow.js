@@ -6,13 +6,20 @@ import { fetchTweets } from "../store/actions/tweet";
 const PeopleWhoFollow = () => {
     const dispatch = useDispatch();
     const token = useSelector(state => state?.auth.token);
-    const { tweets } = useSelector(state => state?.tweet.followerTweets);
+    const { tweets, next } = useSelector(state => state?.tweet.followerTweets);
+    const loaded = tweets.length > 0;
 
     useEffect(() => {
-        dispatch(fetchTweets(token, null, null, true));
-    }, [dispatch, token]);
+        if (!loaded) {
+            dispatch(fetchTweets(token, null, null, true));
+        }
+    }, [dispatch, token, loaded]);
 
-    return <TweetList tweets={tweets} />;
+    const handleNextClick = () => {
+        dispatch(fetchTweets(token, next));
+    };
+
+    return <TweetList tweets={tweets} hasNext={!!next} onNextClick={handleNextClick} />;
 };
 
 export default PeopleWhoFollow;

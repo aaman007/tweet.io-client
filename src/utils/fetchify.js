@@ -1,6 +1,10 @@
 import { BASE_URL } from "../constants";
 
 const fetchify = async (url, expectedStatus, config = {}) => {
+    if (url.indexOf(BASE_URL) > -1) {
+        url = url.slice(BASE_URL.length + 1);
+    }
+
     const response = await fetch(`${BASE_URL}/${url}`, config);
     if (response.status !== expectedStatus) {
         const error = await response.json();

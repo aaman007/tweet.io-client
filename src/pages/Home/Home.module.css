@@ -2,3 +2,9 @@
     display: grid;
     grid-template-columns: 2fr 1fr;
 }
+
+@media screen and (max-width: 768px) {
+    .home {
+        grid-template-columns: 1fr;
+    }
+}

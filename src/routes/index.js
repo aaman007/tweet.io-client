@@ -3,13 +3,14 @@ import React from "react";
 import * as urls from '../urls';
 import BaseLayout from '../components/layouts/Base';
 import AuthLayout from '../components/layouts/Auth/index';
+import { reactLazy } from "../utils/reactLazy";
 
-const Login = React.lazy(() => import('../pages/Login'));
-const Register = React.lazy(() => import('../pages/Register'));
-const Home = React.lazy(() => import('../pages/Home/Home'));
-const Profile = React.lazy(() => import('../pages/Profile'));
-const User = React.lazy(() => import('../pages/User'));
-const PeopleWhoFollow = React.lazy(() => import('../pages/PeopleWhoFollow'));
+const Login = React.lazy(() => reactLazy(import('../pages/Login')));
+const Register = React.lazy(() => reactLazy(import('../pages/Register')));
+const Home = React.lazy(() => reactLazy(import("../pages/Home/Home")));
+const Profile = React.lazy(() => reactLazy(import('../pages/Profile')));
+const User = React.lazy(() => reactLazy(import('../pages/User')));
+const PeopleWhoFollow = React.lazy(() => reactLazy(import('../pages/PeopleWhoFollow')));
 
 // Route configuration with unique name identifiers
 const routes =  [

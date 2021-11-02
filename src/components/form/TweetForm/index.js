@@ -28,6 +28,7 @@ const TweetForm = ({ onSubmit, buttonText, initialValue }) => {
             <textarea
                 ref={tweetRef}
                 className={classes.textarea}
+                placeholder={"What's on your mind........"}
             >
                 {initialValue}
             </textarea>

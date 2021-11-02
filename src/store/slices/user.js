@@ -15,6 +15,7 @@ const userSlice = createSlice({
             const mappedUsernames = idMapper(state.users, 'username');
             const newUsers = action.payload.data.filter(user => !mappedUsernames[user.username]);
             state.users.push(...newUsers);
+            state.next = action.payload.links.next;
         },
 
         addUser: (state, action) => {
@@ -51,7 +52,7 @@ const userSlice = createSlice({
 
         clearUsers: (state, action) => {
             state.users = [];
-            state.users.next = null;
+            state.next = null;
         }
     }
 });

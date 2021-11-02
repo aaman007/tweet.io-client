@@ -96,12 +96,15 @@ export const deleteTweet = (token, tweetId) => async dispatch => {
 };
 
 export const fetchTweets = (token, url = null, username = null, isFollowers = false) => async dispatch => {
+    let type = 1;
     url = url ? url : 'tweets/v1/tweets/';
-    if (username) {
-        url += `?username=${username}`;
+    if (username || url.indexOf('username=') > -1) {
+        type = 2;
+        url = url.indexOf('username=') > -1 ? url : url + `?username=${username}`;
     }
-    else if (isFollowers) {
-        url += '?is_followers=true';
+    else if (isFollowers || url.indexOf('is_followers=') > -1) {
+        type = 3;
+        url = url.indexOf('is_followers=') > -1 ? url : url + '?is_followers=true';
     }
 
     const sendRequest = async () => {
@@ -116,10 +119,10 @@ export const fetchTweets = (token, url = null, username = null, isFollowers = fa
 
     try {
         const data = await sendRequest();
-        if (username) {
+        if (type === 2) {
             dispatch(tweetActions.addUserTweets(data));
         }
-        else if (isFollowers) {
+        else if (type === 3) {
             dispatch(tweetActions.addFollowerTweets(data));
         }
         else {
