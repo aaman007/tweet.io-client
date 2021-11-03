@@ -53,6 +53,7 @@ const userSlice = createSlice({
         clearUsers: (state, action) => {
             state.users = [];
             state.next = null;
+            state.user = null;
         }
     }
 });
