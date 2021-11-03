@@ -28,7 +28,7 @@ const Profile = () => {
             <ProfileInfo user={user} />
             <TweetForm onSubmit={handleNewTweet} buttonText={"Tweet"} />
             <h2 className={"centered"}> Tweets </h2>
-            <UserTweets username={user.username} token={token} editable />
+            <UserTweets username={username} token={token} editable />
         </>
     )
 };
